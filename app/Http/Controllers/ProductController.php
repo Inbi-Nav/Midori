@@ -34,6 +34,5 @@ class ProductController extends Controller
             'category_id' => $request->category_id,
         ]);
         return response() ->json ($products, 201);
-    
     }
 }
