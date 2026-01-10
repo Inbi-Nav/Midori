@@ -31,4 +31,16 @@ class OrderController extends Controller
     }
 
 
+    public function update (Request $request, $id) {
+        $orders = Order::find($id);
+        if ($orders) {
+            $orders ->update($request->all());
+            return response()-> json ($orders);
+        } else {
+            return response()->json (['message'=> 'Pedido no encontrado'], 404);
+        }
+    }
+
+
+
 }
