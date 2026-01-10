@@ -41,6 +41,14 @@ class OrderController extends Controller
         }
     }
 
-
+    public function destroy($id) {
+        $orders = Order::find($id);
+        if ($orders) {
+            $orders->delete();
+            return response()-> json (['message' => 'pedido eliminado']);
+        } else {
+            return response()-> json (['message' => 'pedido no encontrado'], 404);
+        }
+    }
 
 }
