@@ -21,4 +21,12 @@ class CategoryController extends Controller
             return response()->json(['message' => 'Categoria no encontrada'], 404);
         }
     }
+
+    public function store(Request $request) {
+        $categories = Category::create([
+            'name' => $request->name,
+            'description'=> $request->description
+        ]);
+        return response()->json($categories, 201);
+    }
 }
