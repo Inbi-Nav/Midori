@@ -40,4 +40,14 @@ class PaymentController extends Controller
             return response() -> json (['message' => 'Pago no encontrado']);
         }
     }
+
+    public function destroy ($id) {
+        $payments = Payment::find($id);
+        if ($payments) {
+        $payments-> delete();
+        return response() -> json (['message' => 'Pago eliminado']);
+        } else {
+        return response() -> json (['message' => 'Pago no encontrado'], 404);
+        }
+    }
 }
