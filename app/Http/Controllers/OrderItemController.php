@@ -21,4 +21,15 @@ class OrderItemController extends Controller
             return response() -> json(['message' => 'Item de pedido no encontrado'], 404);
         }
     }
+
+    public function store(Request $request) {
+        $orderItems =OrderItem::create([
+            'order_id' => $request -> order_id,
+            'product_id' => $request -> product_id,
+            'quantity' => $request -> quantity,
+            'price' => $request -> price,
+        ]);
+        return response() -> json($orderItems, 201);
+    } 
 }
+
