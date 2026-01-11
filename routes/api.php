@@ -33,4 +33,5 @@ Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
 Route::get('/order-items', [OrderItemController::class, 'index']);
 Route::get('/order-items/{id}', [OrderItemController::class, 'show']);
 Route::post('/order-items', [OrderItemController::class, 'store']);
+Route::put('/order-items/{id}', [OrderItemController::class, 'update']);
 ?>

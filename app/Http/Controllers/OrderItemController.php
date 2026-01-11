@@ -31,5 +31,15 @@ class OrderItemController extends Controller
         ]);
         return response() -> json($orderItems, 201);
     } 
+
+    public function update (Request $request, $id) {
+        $orderItems = OrderItem::find($id);
+        if ($orderItems) {
+            $orderItems -> update($request ->all());
+            return response() ->json($orderItems);
+        } else {
+            return response() -> json(['message' => 'Item de pedido no encontrado'], 404);
+        }
+    }
 }
 
