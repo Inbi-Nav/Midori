@@ -41,5 +41,15 @@ class OrderItemController extends Controller
             return response() -> json(['message' => 'Item de pedido no encontrado'], 404);
         }
     }
+
+    public function destroy($id) {
+        $orderItems = OrderItem::find($id);
+        if($orderItems) {
+            $orderItems->delete();
+            return response()->json(['message' => 'Item de pedido eliminado']);
+        } else {
+            return response() -> json (['message' => 'Item de pedido no encontrado'], 404);
+        }
+    }
 }
 
