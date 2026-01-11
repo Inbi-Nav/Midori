@@ -39,4 +39,5 @@ Route::delete('/order-items/{id}', [OrderItemController::class, 'destroy']);
 Route::get('/payments', [PaymentController::class, 'index']);
 Route::get('/payments/{id}', [PaymentController::class, 'show']);
 Route::post('/payments', [PaymentController::class, 'store']);
+Route::put('/payments/{id}', [PaymentController::class, 'update']);
 ?>

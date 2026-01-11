@@ -30,4 +30,14 @@ class PaymentController extends Controller
         ]);
         return response()-> json ($payments, 201);
     }
+
+    public function update (Request $request, $id) {
+        $payments =  Payment::find($id);
+        if ($payments) {
+            $payments -> update($request -> all());
+            return response()-> json ($payments);
+        } else {
+            return response() -> json (['message' => 'Pago no encontrado']);
+        }
+    }
 }
