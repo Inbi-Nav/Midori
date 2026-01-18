@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Livewire;
 
 use Livewire\Component;
@@ -9,30 +8,36 @@ use App\Models\Product;
 class Cart extends Component
 {
     public array $items = [];
-    public string $debug = 'waiting';
+
+    public function mount()
+    {
+        $this->items = session()->get('cart', []);
+    }
 
     #[On('add-to-cart')]
-    public function add(int $productId) {
+    public function add(int $productId)
+    {
+        $this->items = session()->get('cart', []);
+
         $product = Product::findOrFail($productId);
 
-        if ($product->stock <= 0) {
-            return;
-        }
+        if ($product->stock <= 0) return;
 
         if (isset($this->items[$productId])) {
-            $this->items[$productId]['quantity']++;
+            if ($this->items[$productId]['quantity'] < $product->stock) {
+                $this->items[$productId]['quantity']++;
+            }
         } else {
             $this->items[$productId] = [
-                'id' => $product->id,
-                'name' => $product->name,
-                'price' => $product->price,
+                'id'       => $product->id,
+                'name'     => $product->name,
+                'price'    => $product->price,
+                'image'    => $product->image_url,
                 'quantity' => 1,
             ];
         }
-    }
-
-    public function remove(int $productId) {
-        unset($this->items[$productId]);
+        session()->put('cart', $this->items);
+        $this->dispatch('cart-updated');
     }
 
     public function render()

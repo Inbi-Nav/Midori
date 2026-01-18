@@ -5,22 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midori</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('midori.svg') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="gradient-bg min-h-screen relative overflow-x-hidden">
-    <div class="petals-container">
-        @for ($i = 0; $i < 15; $i++)
-            <div class="petal text-pink-300 text-2xl">🌸</div>
-
-        @endfor
-    </div>
-
-    <div class="leaves-container">
-        @for ($i = 0; $i < 5; $i++)
-            <div class="leaf text-green-500 text-xl">🍃</div>
-        @endfor
-    </div>
 
     <nav class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-lg border-b border-pink-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -35,22 +24,13 @@
             </div>
 
             <form method="GET" action="{{ route('dashboard') }}" class="hidden md:flex">
-                <input
-                type="text"
-                name="search"
-                value="{{ request('search') }}"
-                placeholder="Search products…"
-                class="w-80 px-4 py-2 rounded-full border border-pink-200 focus:outline-none search-glow text-sm">
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Search products…" class="w-80 px-4 py-2 rounded-full border border-pink-200 focus:outline-none search-glow text-sm">
             </form>
 
 
             <div class="flex items-center gap-5">
-
-                <button class="text-2xl hover:scale-110 transition">
-                    🛒
-                </button>
-
-                <div x-data="{ open: false }" class="relative">
+                @livewire('cart-icon')
+                  <div x-data="{ open: false }" class="relative">
                     <button @click="open = !open">
                         <img
                             src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&background=16a34a&color=fff"
@@ -160,10 +140,8 @@
 
         <section>
             <div class="grid grid-cols-1 sm:grid-cols-2 mt-12 md:grid-cols-3 lg:grid-cols-4 gap-8">
-
             @foreach ($products as $product)
             <div x-data="{ open:false }">
-
                 <div class="relative bg-white rounded-3xl shadow-lg p-5 card-hover
                     {{ $product->stock == 0 ? 'opacity-50 grayscale' : '' }}">
 
@@ -192,16 +170,16 @@
                         </span>
 
                         @if($product->stock > 0)
-                             <button x-on:click="Livewire.dispatch('add-to-cart', { productId: {{ $product->id }} })" class="text-xl hover:scale-110 transition">
+                            <button x-on:click="Livewire.dispatch('add-to-cart', { productId: {{ $product->id }} })" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700">
                                 🛒
                             </button>
+
                         @else
                             <span class="text-gray-400 text-xl cursor-not-allowed">🛒</span>
                         @endif
                     </div>
                 </div>
 
-                {{-- MODAL --}}
                 <div x-show="open" x-transition class=" m-5 fixed inset-0 z-50 flex items-center justify-center bg-black/60" @click.self="open = false">
 
                     <div class="bg-white rounded-3xl max-w-lg w-md p-10 mt-10 relative">
@@ -244,9 +222,7 @@
                                     🛒 Only {{ $product->stock }} left
                                 </button>
                             @else
-                                <button
-                                    class="bg-gray-400 text-white px-6 py-2 rounded-full cursor-not-allowed"
-                                    disabled>
+                                <button class="bg-gray-400 text-white px-6 py-2 rounded-full cursor-not-allowed"  disabled>
                                     Out of stock
                                 </button>
                             @endif
@@ -258,19 +234,7 @@
             </div>
         </section>
     </main> 
-        {{-- 🛒 FLOATING CART --}}
-    <div x-data="{ open:false }" class="fixed bottom-6 right-6 z-50">
-        <button
-            @click="open = !open"
-            class="bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-green-700 transition">
-            🛒
-        </button>
-
-        <div
-            x-show="open"
-            x-transition
-            @click.outside="open = false"
-            class="absolute bottom-16 right-0">
+        <div  x-show="open" x-transition @click.outside="open = false" class="absolute bottom-16 right-0">
             @livewire('cart')
         </div>
     </div>
