@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @livewireStyles
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midori</title>
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    {{-- Alpine.js --}}
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('midori.svg') }}">
 </head>
 
 <body class="gradient-bg min-h-screen relative overflow-x-hidden">
-
     <div class="petals-container">
         @for ($i = 0; $i < 15; $i++)
             <div class="petal text-pink-300 text-2xl">🌸</div>
@@ -199,7 +192,9 @@
                         </span>
 
                         @if($product->stock > 0)
-                            <button class="text-xl">🛒</button>
+                             <button x-on:click="Livewire.dispatch('add-to-cart', { productId: {{ $product->id }} })" class="text-xl hover:scale-110 transition">
+                                🛒
+                            </button>
                         @else
                             <span class="text-gray-400 text-xl cursor-not-allowed">🛒</span>
                         @endif
@@ -240,9 +235,9 @@
                             </span>
 
                             @if($product->stock > 10)
-                                <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">
-                                    🛒 Add to cart
-                                </button>
+                               <button x-on:click="Livewire.dispatch('add-to-cart', { productId: {{ $product->id }} })" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700">
+                                🛒 Add to cart
+                            </button>
 
                             @elseif($product->stock > 0)
                                 <button class="bg-yellow-500 text-white px-6 py-2 rounded-full hover:bg-yellow-600 transition">
@@ -262,6 +257,24 @@
             @endforeach
             </div>
         </section>
-    </main>
+    </main> 
+        {{-- 🛒 FLOATING CART --}}
+    <div x-data="{ open:false }" class="fixed bottom-6 right-6 z-50">
+        <button
+            @click="open = !open"
+            class="bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-green-700 transition">
+            🛒
+        </button>
+
+        <div
+            x-show="open"
+            x-transition
+            @click.outside="open = false"
+            class="absolute bottom-16 right-0">
+            @livewire('cart')
+        </div>
+    </div>
+    @livewireScripts
 </body>
 </html>
+
