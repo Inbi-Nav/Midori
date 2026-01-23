@@ -1,5 +1,4 @@
 # Midori
-
 Midori es una aplicación **e-commerce** desarrollada con **PhP/Laravel-Blade/Tailwind**, inspirada a cultutra japonesa.  
 El proyecto simula una tienda online completa, con gestión de usuarios, pedidos, pagos simulados y un panel de administración.
 
