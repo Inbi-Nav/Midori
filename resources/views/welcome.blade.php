@@ -6,8 +6,7 @@
     <title>Midori</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-<link rel="icon" type="image/svg+xml" href="{{ asset('midori.svg') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('midori.svg') }}">
 
 </head>
 <body class="gradient-bg min-h-screen relative overflow-x-hidden">
@@ -77,11 +76,16 @@
             </div>
         </div>
     </section>
-    <section class="py-1 px-4 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-pink-500 font-medium tracking-wider uppercase text-sm">Explore Our Collections</span>
-            </div>
+   <section class="py-1 px-4 relative z-10">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-pink-500 font-medium tracking-wider uppercase text-sm">
+                Explore Our Collections
+            </span>
+        </div>
+    </div>
+</section>
+
             
         <section class="py-20 px-4 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

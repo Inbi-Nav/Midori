@@ -32,9 +32,9 @@ class CheckoutController extends Controller
         $order = Order::create([
             'user_id' => Auth::id(),
             'total_amount' => array_reduce($cart, function ($sum, $item) {
-                return $sum + $item['price'] * $item['quantity'];
+            return $sum + $item['price'] * $item['quantity'];
             }, 0),
-            'status' => 'paid', 
+            'status' => 'pending',
         ]);
 
         foreach ($cart as $item) {

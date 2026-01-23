@@ -52,7 +52,7 @@
                 href="{{ route('checkout') }}"
                 class="bg-green-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-green-700 transition"
             >
-                Proceed to checkout →
+                Proceed to checkout
             </a>
     
         </div>

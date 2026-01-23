@@ -63,11 +63,6 @@
                     x-transition
                     class="absolute right-0 mt-3 w-44 bg-gray-800 rounded-xl shadow-lg overflow-hidden text-sm">
 
-                    <a href="{{ route('dashboard') }}"
-                       class="block px-4 py-2 hover:bg-gray-700">
-                        🛍 Shop view
-                    </a>
-
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button class="w-full text-left px-4 py-2 hover:bg-gray-700 text-red-400">

@@ -33,7 +33,7 @@
         <form method="POST" action="{{ route('checkout.pay') }}" class="mt-8 text-right">
             @csrf
             <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl text-lg font-semibold transition">
-                Pay now (simulated)
+                Pay now
             </button>
         </form>
     </div>

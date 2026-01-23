@@ -19,13 +19,13 @@ class AdminOrderController extends Controller
 
     public function updateStatus(Request $request, Order $order) {
         $request->validate([
-            'status' => 'required|in:pending,paid,shipped,cancelled',
+            'status' => 'required|in:' . implode(',', Order::STATUSES),
         ]);
 
-        $order->update([
+         $order->update([
             'status' => $request->status,
         ]);
-
-        return back()->with('success', 'Estado actualizado');
+        return back()->with('success', 'Order status updated');
     }
+
 }

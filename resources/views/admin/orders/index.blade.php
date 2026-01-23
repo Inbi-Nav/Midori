@@ -23,14 +23,15 @@
         <form method="POST" action="{{ route('admin.orders.status', $order) }}" class="flex items-center gap-3">
             @csrf
             @method('PATCH')
-            <select name="status"
-                class="bg-gray-800 border border-gray-700 rounded px-3 py-1 text-sm">
-                @foreach(['Pending','Shipped','Cancelled'] as $status)
-                    <option value="{{ $status }}" @selected($order->status === $status)>
-                        {{ ($status) }}
-                    </option>
-                @endforeach
-            </select>
+        <select name="status"
+            class="bg-gray-800 border border-gray-700 rounded px-3 py-1 text-sm">
+            @foreach(\App\Models\Order::STATUSES as $status)
+                <option value="{{ $status }}" @selected($order->status === $status)>
+                    {{ ucfirst($status) }}
+                </option>
+            @endforeach
+        </select>
+
             <button class="bg-green-600 hover:bg-green-700 transition px-4 py-1.5 rounded text-sm">
                 Save
             </button>
