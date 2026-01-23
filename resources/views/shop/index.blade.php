@@ -44,7 +44,7 @@
                         class="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-lg overflow-hidden text-sm">
 
                         <a href="{{ route('profile.edit') }}" class="block px-4 py-2 hover:bg-gray-100">👤 Profile</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">📦 My orders</a>
+                        <a href="{{ route('orders.mine') }}" class="block px-4 py-2 hover:bg-gray-100">📦 My orders</a>
 
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

@@ -6,10 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
-class AdminOrderController extends Controller
-{
-    public function index()
-    {
+class AdminOrderController extends Controller {
+    public function index() {
         $orders = Order::with('user')
             ->latest()
             ->get();
@@ -28,4 +26,8 @@ class AdminOrderController extends Controller
         return back()->with('success', 'Order status updated');
     }
 
+    public function destroy(Order $order) {
+        $order->delete();
+        return back()->with('success', 'Order deleted');
+    }
 }

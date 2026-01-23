@@ -5,7 +5,6 @@
             <h1 class="text-3xl font-bold text-green-600">
                 Payment successful
             </h1>
-
             <p class="mt-4 text-gray-600">
                 Thank you for your purchase!
             </p>
@@ -20,10 +19,10 @@
                     Continue shopping
                 </a>
 
-                <a href="#"
-                   class="px-6 py-3 rounded-xl border border-green-600 text-green-600 hover:bg-green-50 transition">
+               <a href="{{ route('orders.mine') }}" class="px-6 py-3 rounded-xl border border-green-600 text-green-600 hover:bg-green-50 transition">
                     View my orders
                 </a>
+
             </div>
         </div>
 

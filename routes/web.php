@@ -50,7 +50,7 @@ Route::middleware('auth')->get('/my-orders', function () {
         ->latest()
         ->get();
 
-    return view('orders.my-orders', compact('orders'));
+    return view('admin.orders.my-orders', compact('orders'));
 })->name('orders.mine');
 
 Route::middleware(['auth', 'admin'])
@@ -66,4 +66,24 @@ Route::middleware(['auth', 'admin'])
 
         Route::get('/users', [AdminUserController::class, 'index'])
             ->name('users.index');
-    });
+        
+        Route::delete('/orders/{order}', [AdminOrderController::class, 'destroy'])
+            ->name('orders.delete');
+});
+
+Route::middleware('auth')->patch('/orders/{order}/cancel', function (\App\Models\Order $order) {
+
+    if ($order->user_id !== auth()->id()) {
+        abort(403);
+    }
+
+    if (!in_array($order->status, ['paid', 'pending'])) {
+        return back()->with('error', 'This order cannot be cancelled.');
+    }
+
+    $order->update([
+        'status' => 'cancelled'
+    ]);
+
+    return back()->with('success', 'Order cancelled successfully.');
+})->name('orders.cancel');

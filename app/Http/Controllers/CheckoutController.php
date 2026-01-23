@@ -34,7 +34,7 @@ class CheckoutController extends Controller
             'total_amount' => array_reduce($cart, function ($sum, $item) {
             return $sum + $item['price'] * $item['quantity'];
             }, 0),
-            'status' => 'pending',
+            'status' => 'paid',
         ]);
 
         foreach ($cart as $item) {
