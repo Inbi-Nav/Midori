@@ -12,19 +12,19 @@ class ProductSeeder extends Seeder
         Product::insert([
 
             [
-              "name"=> "Minimal Cat Incense Holder",
+              "name"=> "Incense Holder",
               "description"=> "Elegant minimalist incense holder featuring a small black cat figurine.",
-              "price"=> 29.9,
+              "price"=> 8.99,
               "stock"=> 25,
               "material"=> "ceramic",
               "color"=> "black",
               "image_url"=> "images/products/incense-holder.png",
-              "category_id"=> 1
+              "category_id"=> 6
             ],
             [
-              "name"=> "Minimal Bamboo Cutlery Set",
+              "name"=> "Cutlery Set",
               "description"=> "Reusable bamboo cutlery set for sustainable daily dining.",
-              "price"=> 39.9,
+              "price"=> 12.55,
               "stock"=> 20,
               "material"=> "bamboo",
               "color"=> "light wood brown",
@@ -32,9 +32,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 1
             ],
             [
-              "name"=> "Bamboo Bento Lunch Box",
+              "name"=> "Bamboo Lunch Box",
               "description"=> "Minimalist bamboo bento box with compartments.",
-              "price"=> 34.9,
+              "price"=> 9.90,
               "stock"=> 18,
               "material"=> "bamboo",
               "color"=> "light wood brown",
@@ -42,9 +42,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 1
             ],
             [
-              "name"=> "Lucky Cat Glass Water Bottle",
+              "name"=> "Glass Water Bottle",
               "description"=> "Reusable glass bottle with lucky cat illustration.",
-              "price"=> 24.9,
+              "price"=> 6.29,
               "stock"=> 30,
               "material"=> "glass",
               "color"=> "transparent",
@@ -52,9 +52,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 1
             ],
             [
-              "name"=> "Minimal Japanese Style Napkin Set",
+              "name"=> " Napkin Set",
               "description"=> "Reusable fabric napkins with Japanese-style illustration.",
-              "price"=> 21.9,
+              "price"=> 6.17,
               "stock"=> 24,
               "material"=> "fabric",
               "color"=> "white and black",
@@ -62,9 +62,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 1
             ],
             [
-              "name"=> "Minimal Ceramic Plate Set",
+              "name"=> "Ceramic Plate Set",
               "description"=> "Ceramic plate set in neutral tones.",
-              "price"=> 52.9,
+              "price"=> 9.99,
               "stock"=> 14,
               "material"=> "ceramic",
               "color"=> "neutral tones",
@@ -72,9 +72,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 1
             ],
             [
-              "name"=> "Minimal Ceramic Plate Set – Earth Tones",
+              "name"=> "Ceramic Plate Set – Earth Tones",
               "description"=> "Ceramic plates in earth tones.",
-              "price"=> 54.9,
+              "price"=> 11.89,
               "stock"=> 12,
               "material"=> "ceramic",
               "color"=> "earth tones",
@@ -84,7 +84,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Woven Storage Basket",
               "description"=> "Handwoven basket for everyday storage.",
-              "price"=> 28.9,
+              "price"=> 4.15,
               "stock"=> 20,
               "material"=> "woven fiber",
               "color"=> "light wood brown",
@@ -92,9 +92,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 1
             ],
             [
-              "name"=> "Japanese Wave Thermos Bottle",
+              "name"=> "Thermos Bottle",
               "description"=> "Thermos bottle with traditional wave illustration.",
-              "price"=> 29.9,
+              "price"=> 9.19,
               "stock"=> 22,
               "material"=> "stainless steel",
               "color"=> "off white and blue",
@@ -125,7 +125,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Matcha Utensil Set",
               "description"=> "Complete matcha preparation utensil set.",
-              "price"=> 44.9,
+              "price"=> 24.9,
               "stock"=> 22,
               "material"=> "bamboo and metal",
               "color"=> "light wood brown",
@@ -135,7 +135,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Hand-Painted Ceramic Tea Bowl",
               "description"=> "Tea bowl with Japanese mountain illustration.",
-              "price"=> 26.9,
+              "price"=> 15.49,
               "stock"=> 18,
               "material"=> "ceramic",
               "color"=> "off white and blue",
@@ -143,9 +143,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 2
             ],
             [
-              "name"=> "Japanese Ceramic Tea Set",
-              "description"=> "Traditional ceramic teapot with matching cups.",
-              "price"=> 79.9,
+              "name"=> "Ceramic Tea Set",
+              "description"=> "Traditional japanese style ceramic teapot with matching cups.",
+              "price"=> 20.9,
               "stock"=> 7,
               "material"=> "ceramic",
               "color"=> "dark green",
@@ -154,9 +154,9 @@ class ProductSeeder extends Seeder
             ],
             
             [
-              "name"=> "Rustic Ceramic Vase",
+              "name"=> "Ceramic Vase",
               "description"=> "Decorative rustic ceramic vase.",
-              "price"=> 49.9,
+              "price"=> 39.9,
               "stock"=> 12,
               "material"=> "ceramic",
               "color"=> "dark brown",
@@ -166,7 +166,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Wooden Desk Shelf Organizer",
               "description"=> "Three-tier wooden desk shelf.",
-              "price"=> 59.9,
+              "price"=> 29.59,
               "stock"=> 10,
               "material"=> "wood",
               "color"=> "wood brown",
@@ -174,9 +174,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 3
             ],
             [
-              "name"=> "Japanese Paper Lantern Set",
+              "name"=> "Paper Lantern Set",
               "description"=> "Decorative Japanese-style paper lanterns.",
-              "price"=> 64.9,
+              "price"=> 8.99,
               "stock"=> 8,
               "material"=> "paper",
               "color"=> "multicolor",
@@ -184,9 +184,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 3
             ],
             [
-              "name"=> "Japanese Paper Lantern Set – Cherry Blossom",
-              "description"=> "Paper lanterns with cherry blossom illustration.",
-              "price"=> 72.9,
+              "name"=> "Paper Lantern Set – Cherry Blossom",
+              "description"=> "Japanese Paper lanterns with cherry blossom illustration.",
+              "price"=> 9.99,
               "stock"=> 6,
               "material"=> "paper",
               "color"=> "white and red",
@@ -194,7 +194,7 @@ class ProductSeeder extends Seeder
               "category_id"=> 3
             ],
             [
-              "name"=> "Japanese Calligraphy Table Lamp",
+              "name"=> "Calligraphy Table Lamp",
               "description"=> "Table lamp with Japanese calligraphy shade.",
               "price"=> 47.9,
               "stock"=> 9,
@@ -204,9 +204,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 3
             ],
             [
-              "name"=> "Cherry Blossom Ambient Table Lamp",
+              "name"=> "Table Lamp",
               "description"=> "Ambient lamp with cherry blossom artwork.",
-              "price"=> 54.9,
+              "price"=> 24.9,
               "stock"=> 11,
               "material"=> "glass and wood",
               "color"=> "pink and off white",
@@ -214,9 +214,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 3
             ],
             [
-              "name"=> "Yin Yang Five Elements Wall Art",
+              "name"=> "Yin Yang Wall Art",
               "description"=> "Decorative wall art featuring Yin Yang and elements.",
-              "price"=> 69.9,
+              "price"=> 20.9,
               "stock"=> 6,
               "material"=> "fabric",
               "color"=> "earth tones",
@@ -224,9 +224,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 3
             ],
             [
-              "name"=> "Japanese Landscape Wall Hanging",
+              "name"=> "Landscape Wall Hanging",
               "description"=> "Textile wall hanging with Japanese landscape.",
-              "price"=> 58.9,
+              "price"=> 21.9,
               "stock"=> 9,
               "material"=> "fabric",
               "color"=> "soft pink and off white",
@@ -245,7 +245,7 @@ class ProductSeeder extends Seeder
               "category_id"=> 4
             ],
             [
-              "name"=> "Soot Sprite Ceramic Mug",
+              "name"=> "Ceramic Mug",
               "description"=> "Ceramic mug with Soot Sprite design.",
               "price"=> 16.9,
               "stock"=> 35,
@@ -255,9 +255,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 4
             ],
             [
-              "name"=> "Ghibli Inspired Planter Pot",
+              "name"=> "Planter Pot",
               "description"=> "Planter inspired by Ghibli character.",
-              "price"=> 32.9,
+              "price"=> 15.9,
               "stock"=> 14,
               "material"=> "ceramic",
               "color"=> "multicolor",
@@ -267,7 +267,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Totoro Inspired Planter Set",
               "description"=> "Totoro-inspired planter pots set.",
-              "price"=> 39.9,
+              "price"=> 15.9,
               "stock"=> 16,
               "material"=> "ceramic",
               "color"=> "grey and beige",
@@ -277,7 +277,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Studio Ghibli Figurine Set",
               "description"=> "Ghibli-inspired collectible figurines.",
-              "price"=> 36.9,
+              "price"=> 16.9,
               "stock"=> 17,
               "material"=> "resin",
               "color"=> "multicolor",
@@ -287,7 +287,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Totoro Mini Figurine Collection",
               "description"=> "Mini Totoro figurines collection.",
-              "price"=> 42.9,
+              "price"=> 12.9,
               "stock"=> 12,
               "material"=> "resin",
               "color"=> "multicolor",
@@ -309,7 +309,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Bamboo Cutlery Set – Compact",
               "description"=> "Compact bamboo cutlery set for everyday meals.",
-              "price"=> 36.9,
+              "price"=> 17.9,
               "stock"=> 15,
               "material"=> "bamboo",
               "color"=> "light wood brown",
@@ -317,9 +317,9 @@ class ProductSeeder extends Seeder
               "category_id"=> 1
             ],
             [
-              "name"=> "Minimal Incense Holder – Ceramic",
+              "name"=> "Incense Holder – Ceramic",
               "description"=> "Minimal ceramic incense holder with modern design.",
-              "price"=> 26.9,
+              "price"=> 9.99,
               "stock"=> 18,
               "material"=> "ceramic",
               "color"=> "black",
@@ -330,7 +330,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Matcha Ceremonial Set",
               "description"=> "Complete ceremonial matcha set for traditional tea rituals.",
-              "price"=> 89.9,
+              "price"=> 35.9,
               "stock"=> 6,
               "material"=> "ceramic and bamboo",
               "color"=> "earth tones",
@@ -371,7 +371,7 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Ghibli Inspired Plush Toy",
               "description"=> "Soft plush toy inspired by Studio Ghibli characters.",
-              "price"=> 24.9,
+              "price"=> 8.74,
               "stock"=> 20,
               "material"=> "fabric",
               "color"=> "black",
@@ -381,12 +381,12 @@ class ProductSeeder extends Seeder
             [
               "name"=> "Ghibli Figurine Collection",
               "description"=> "Collection of Studio Ghibli inspired figurines.",
-              "price"=> 59.9,
+              "price"=> 33.69,
               "stock"=> 8,
               "material"=> "resin",
               "color"=> "multicolor",
               "image_url"=> "images/products/funko-collection.png",
-              "category_id"=> 4
+              "category_id"=> 6
             ],          
 
             [
