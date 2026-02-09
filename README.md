@@ -1,12 +1,12 @@
 # Midori
-Midori es una aplicación **e-commerce** desarrollada con **PhP/Laravel-Blade/Tailwind**, inspirada a cultutra japonesa.  
+Midori es una aplicación **e-commerce** desarrollada con **PHP/Laravel-Blade/Tailwind**, inspirada en cultura japonesa.  
 El proyecto simula una tienda online completa, con gestión de usuarios, pedidos, pagos simulados y un panel de administración.
 
 ---
 
 ## Descripción del proyecto
 
-**Midori** permite a los usuarios registrarse, explorar un productos, añadirlos a una cesta, realizar pedidos y consultar su historial de compras.  
+**Midori** permite a los usuarios registrarse, explorar  productos, añadirlos a una cesta, realizar pedidos y consultar su historial de compras.  
 Los administradores pueden gestionar pedidos y actualizar su estado a lo largo del proceso de compra.
 
 El proyecto ha sido desarrollado como **proyecto académico**, con énfasis en:
@@ -24,7 +24,7 @@ El proyecto ha sido desarrollado como **proyecto académico**, con énfasis en:
 - **Blade Templates**
 - **Tailwind CSS**
 - **Vite**
-- **Livewire (cesta)**
+- **Livewire (carrito)**
 - **Thunder Client (testing API)**
 
 ---
@@ -107,3 +107,34 @@ La base de datos sigue un diseño **relacional** y está compuesta por:
 
 **storage/**                   
 **tests/**                       
+
+
+## INSTALACION
+
+**1. Clonar el repositorio**
+
+**2. Instalar dependencias PHP**
+- composer install
+
+**3. Instalar dependencias Frontend**
+- npm install
+
+**4. Crear el archivo de entorno**
+- cp .env.example .env
+
+**5. Generar la clave de la aplicación**
+- php artisan key:generate
+
+**6. Migrar y cargar datos iniciales**
+- php artisan migrate:fresh --seed
+
+**7. Vite**
+- npm run dev
+
+**8. Laravel**
+- php artisan serve
+
+**Credenciales del administrador (demo):**
+
+**Email:** admin@midori.com
+**Contraseña:** midori2026
