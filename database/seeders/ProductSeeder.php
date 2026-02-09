@@ -58,7 +58,7 @@ class ProductSeeder extends Seeder
               "stock"=> 24,
               "material"=> "fabric",
               "color"=> "white and black",
-              "image_url"=> "images/products/napkin-set-png.png",
+              "image_url"=> "images/products/napkin-set.png",
               "category_id"=> 1
             ],
             [
@@ -81,16 +81,7 @@ class ProductSeeder extends Seeder
               "image_url"=> "images/products/Plate-set-2.png",
               "category_id"=> 1
             ],
-            [
-              "name"=> "Woven Storage Basket",
-              "description"=> "Handwoven basket for everyday storage.",
-              "price"=> 4.15,
-              "stock"=> 20,
-              "material"=> "woven fiber",
-              "color"=> "light wood brown",
-              "image_url"=> "images/products/storage-basket.png",
-              "category_id"=> 1
-            ],
+
             [
               "name"=> "Thermos Bottle",
               "description"=> "Thermos bottle with traditional wave illustration.",
@@ -109,7 +100,7 @@ class ProductSeeder extends Seeder
               "material"=> "bamboo and fabric",
               "color"=> "light wood brown and green",
               "image_url"=> "images/products/wooden-cutlery.png",
-              "category_id"=> 1
+              "category_id"=> 6
             ],
             
             [
@@ -130,8 +121,9 @@ class ProductSeeder extends Seeder
               "material"=> "bamboo and metal",
               "color"=> "light wood brown",
               "image_url"=> "images/products/matcha-utensil-set.png",
-              "category_id"=> 2
+              "category_id"=> 6
             ],
+            
             [
               "name"=> "Hand-Painted Ceramic Tea Bowl",
               "description"=> "Tea bowl with Japanese mountain illustration.",
