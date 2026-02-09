@@ -46,11 +46,6 @@ El proyecto ha sido desarrollado como **proyecto académico**, con énfasis en:
 - Cambio de estado de pedidos
 - Gestión del flujo del pedido
 
-**Credenciales del administrador (demo):**
-
-**Email:** admin@midori.com
-**Contraseña:** midori2026
-
 ---
 
 ## Flujo de uso de la aplicación
