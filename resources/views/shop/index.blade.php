@@ -100,9 +100,12 @@
                     <label class="text-sm font-medium">Color</label>
                     <select name="color" class="w-full mt-1 border rounded-lg px-3 py-2 text-sm">
                         <option value="">All</option>
-                        <option value="green" {{ request('color')=='green'?'selected':'' }}>Green</option>
+                        <option value="multicolor" {{ request('color')=='multicolor'?'selected':'' }}>Multicolor</option>
+                        <option value="green" {{ request('color')=='green'?'selected':'' }}>Black</option>
                         <option value="white" {{ request('color')=='white'?'selected':'' }}>White</option>
-                        <option value="black" {{ request('color')=='black'?'selected':'' }}>Black</option>
+                        <option value="pink" {{ request('color')=='pink'?'selected':'' }}>Pink</option>
+                        
+
                     </select>
                 </div>
 
@@ -112,7 +115,9 @@
                         <option value="">All</option>
                         <option value="ceramic" {{ request('material')=='ceramic'?'selected':'' }}>Ceramic</option>
                         <option value="wood" {{ request('material')=='wood'?'selected':'' }}>Wood</option>
-                        <option value="metal" {{ request('material')=='metal'?'selected':'' }}>Metal</option>
+                        <option value="paper" {{ request('material')=='paper'?'selected':'' }}>Paper</option>
+                        <option value="resin" {{ request('material')=='resin'?'selected':'' }}>Resin</option>
+
                     </select>
                 </div>
                 <div>
@@ -231,6 +236,9 @@
                 </div>
             </div>
             @endforeach
+            </div>
+            <div class="mt-12 flex justify-center">
+                {{ $products->withQueryString()->links() }}
             </div>
         </section>
     </main> 
