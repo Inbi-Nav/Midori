@@ -30,11 +30,32 @@
             </div>
         </div>
 
-        <form method="POST" action="{{ route('checkout.pay') }}" class="mt-8 text-right">
+       <form method="POST" action="{{ route('checkout.pay') }}" class="mt-8">
             @csrf
-            <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl text-lg font-semibold transition">
-                Pay now
-            </button>
+            <div class="mt-6">
+                <label class="block text-sm font-medium mb-2">
+                    Payment method
+                </label>
+
+                <select name="payment_method"
+                        class="w-full border rounded-lg px-4 py-2">
+                    <option value="">Select method</option>
+                    <option value="card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+
+                @error('payment_method')
+                    <p class="text-red-600 text-sm mt-1">
+                        {{ $message }}
+                    </p>
+                @enderror
+            </div>
+
+            <div class="mt-8 text-right">
+                <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl text-lg font-semibold transition">
+                    Pay now
+                </button>
+            </div>
         </form>
     </div>
 </x-app-layout>
