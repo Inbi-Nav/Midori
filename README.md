@@ -117,16 +117,20 @@ La base de datos sigue un diseño **relacional** y está compuesta por:
 **4. Crear el archivo de entorno**
 - cp .env.example .env
 
-**5. Generar la clave de la aplicación**
+**5. Crear la base de datos (MySQL)**
+- CREATE DATABASE midori;
+
+**6. Generar la clave de la aplicación**  
 - php artisan key:generate
 
-**6. Migrar y cargar datos iniciales**
+
+**7- Migrar y cargar datos iniciales**
 - php artisan migrate:fresh --seed
 
-**7. Vite**
+**8. Vite**
 - npm run dev
 
-**8. Laravel**
+**9. Laravel**
 - php artisan serve
 
 **Credenciales del administrador (demo):**

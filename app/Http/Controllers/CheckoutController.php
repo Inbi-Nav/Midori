@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\Payment;
+use App\Http\Requests\CheckoutRequest;
 
 class CheckoutController extends Controller
 {
@@ -22,18 +23,22 @@ class CheckoutController extends Controller
         return view('checkout.index', compact('cart', 'total'));
     }
 
-    public function pay(Request $request) {
+    public function pay(CheckoutRequest $request)
+    {
         $cart = Cache::get('cart_user_' . Auth::id(), []);
 
         if (empty($cart)) {
-            return redirect()->route('cart')->with('error', 'Cart is empty');
+            return redirect()->route('cart')
+                ->with('error', 'Cart is empty');
         }
+
+        $total = collect($cart)->sum(function ($item) {
+            return $item['price'] * $item['quantity'];
+        });
 
         $order = Order::create([
             'user_id' => Auth::id(),
-            'total_amount' => array_reduce($cart, function ($sum, $item) {
-            return $sum + $item['price'] * $item['quantity'];
-            }, 0),
+            'total_amount' => $total,
             'status' => 'paid',
         ]);
 
@@ -51,8 +56,8 @@ class CheckoutController extends Controller
 
         Payment::create([
             'order_id' => $order->id,
-            'amount' => $order->total_amount,
-            'payment_method' => 'simulated',
+            'amount' => $total,
+            'payment_method' => $request->payment_method, 
             'status' => 'paid',
         ]);
 

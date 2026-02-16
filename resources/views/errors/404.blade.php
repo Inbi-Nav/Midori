@@ -2,8 +2,8 @@
     <div class="min-h-screen flex flex-col items-center justify-center text-center">
         <h1 class="text-6xl font-bold text-gray-800">404</h1>
 
-        <p class="mt-4 text-lg text-gray-600">
-            Página no encontrada
+        <p class="mt-4 text-lg text-red-600">
+           404! Page not found!!!.
         </p>
 
         <a href="{{ url('/') }}"
